@@ -1,0 +1,32 @@
+<div class="col-md-12">
+    <div class="card card-container">
+        <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="profile-img-card" />
+        <mat-card>
+            <mat-card-content>
+                <form [formGroup]='viewModel.form' (ngSubmit)="onSubmit()">
+                    <h2>Авторизация</h2>
+                    <mat-form-field>
+                        <input matInput placeholder="Логин" formControlName="login" name="login">
+                        <mat-error>
+                            Поле "Логин" обязательно для заполнения
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput type="password" placeholder="Пароль" formControlName="password" name="password">
+                        <mat-error>
+                            Поле "Пароль" обязательно для заполнения
+                        </mat-error>
+                    </mat-form-field>
+                    <ng-container *ngIf="!loading; else loader">
+                        <button mat-raised-button color="primary"
+                            [disabled]="!viewModel.form.valid && !loading">Авторизоваться </button>
+                    </ng-container>
+                    <ng-template #loader>
+                        <mat-icon>autorenew</mat-icon>
+                    </ng-template>
+
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

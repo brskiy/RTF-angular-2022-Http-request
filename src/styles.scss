@@ -1,0 +1,7 @@
+@import "./../node_modules/angular-notifier/styles.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.cdk-overlay-container {
+    z-index: 1056; //lower then fixed header z-index so it goes behind it
+}

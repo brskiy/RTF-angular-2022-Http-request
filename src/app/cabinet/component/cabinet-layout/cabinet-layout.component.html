@@ -1,0 +1,25 @@
+<mat-toolbar style="height: 5vh;">
+    <button (click)="sidenav.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Тестирование запросов</span>
+    <span class="example-spacer"></span>
+    <button [routerLink]="'/account/login'" mat-icon-button (click)="logout()">
+        Выход
+    </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <mat-nav-list>
+            <ng-container>
+                <a mat-list-item> Пункты меню </a>
+            </ng-container>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 95vh;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
